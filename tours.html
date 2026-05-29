@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Tours | Watamu Wilderness Safaris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-paw"></i></span>
+        <div class="logo-text">
+          <span class="logo-main">Watamu Wilderness</span>
+          <span class="logo-sub">Safaris & Tours</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="tours.html" class="nav-link active">Tours</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="btn-book">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <p class="section-eyebrow">Handcrafted Experiences</p>
+    <h1>All <em>Tours & Packages</em></h1>
+    <p>From half-day coastal adventures to week-long safari odysseys — every tour personally led or overseen by Pauline Nangira.</p>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+
+      
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem;">
+        <button class="tour-filter-btn btn-card active" data-filter="all" style="background:var(--earth);color:#fff;border-color:var(--earth)">All Tours</button>
+        <button class="tour-filter-btn btn-card" data-filter="safari">Safari</button>
+        <button class="tour-filter-btn btn-card" data-filter="coastal">Coastal</button>
+        <button class="tour-filter-btn btn-card" data-filter="cultural">Cultural</button>
+        <button class="tour-filter-btn btn-card" data-filter="forest">Forest</button>
+        <button class="tour-filter-btn btn-card" data-filter="night">Night Tours</button>
+      </div>
+
+      <div class="tours-grid" id="tours-container">
+
+        <div class="tour-card tour-card-filterable reveal" data-category="safari">
+          <div class="tour-img"><div class="tour-emoji">🦁</div><div class="tour-overlay"><span class="tour-tag">Most Popular</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> 3 Days</span><span><i class="fa-solid fa-location-dot"></i> Tsavo East</span><span><i class="fa-solid fa-users"></i> Max 8</span></div>
+            <h3>Tsavo Red Elephants Safari</h3>
+            <p>Witness the legendary dust-red elephants of Tsavo East. Dawn game drives, bush dinners and exclusive campsites with panoramic savannah views.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ 2 nights tented camp accommodation</li>
+              <li>✓ All meals & park fees included</li>
+              <li>✓ Professional guide (Pauline or trained local)</li>
+              <li>✓ Airport / hotel transfers</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$320</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="coastal">
+          <div class="tour-img tour-img-2"><div class="tour-emoji">🐠</div><div class="tour-overlay"><span class="tour-tag">Coastal</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> Full Day</span><span><i class="fa-solid fa-location-dot"></i> Watamu Marine Park</span></div>
+            <h3>Watamu Reef Snorkel & Dhow Cruise</h3>
+            <p>Glide over vibrant coral gardens, swim with sea turtles, and sail back on a traditional Swahili dhow as the sun dips below the Indian Ocean horizon.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ Marine park entry fees</li>
+              <li>✓ Snorkel gear & life jackets</li>
+              <li>✓ Swahili seafood lunch on dhow</li>
+              <li>✓ Experienced boat crew</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$85</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="safari">
+          <div class="tour-img tour-img-3"><div class="tour-emoji">🦒</div><div class="tour-overlay"><span class="tour-tag">Big 5</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> 5 Days</span><span><i class="fa-solid fa-location-dot"></i> Maasai Mara</span></div>
+            <h3>Maasai Mara Great Migration</h3>
+            <p>Experience one of Earth's greatest wildlife spectacles — millions of wildebeest crossing the Mara River. Big Five sightings almost guaranteed.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ 4 nights luxury tented camp</li>
+              <li>✓ All meals, flights & transfers</li>
+              <li>✓ Hot air balloon option available</li>
+              <li>✓ Maasai cultural visit included</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$750</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="forest">
+          <div class="tour-img tour-img-4"><div class="tour-emoji">🌿</div><div class="tour-overlay"><span class="tour-tag">Eco Tour</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> Half Day</span><span><i class="fa-solid fa-location-dot"></i> Arabuko-Sokoke</span></div>
+            <h3>Arabuko-Sokoke Forest Walk</h3>
+            <p>Trek Africa's second-largest coastal forest with Pauline. Spot rare Amani sunbirds, Clarke's weavers, and the golden-rumped elephant shrew.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ Expert birding guide</li>
+              <li>✓ Forest entry permits included</li>
+              <li>✓ Binoculars provided</li>
+              <li>✓ Picnic refreshments</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$55</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="cultural">
+          <div class="tour-img tour-img-5"><div class="tour-emoji">🏘️</div><div class="tour-overlay"><span class="tour-tag">Cultural</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> Full Day</span><span><i class="fa-solid fa-location-dot"></i> Watamu Village</span></div>
+            <h3>Giriama Cultural Village Tour</h3>
+            <p>Immerse yourself in the rich traditions of the coastal Giriama people — led by Pauline, a proud Giriama herself.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ Traditional dance performances</li>
+              <li>✓ Home-cooked Giriama lunch</li>
+              <li>✓ Craft & weaving workshops</li>
+              <li>✓ Village school visit option</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$65</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="night">
+          <div class="tour-img tour-img-6"><div class="tour-emoji">🐢</div><div class="tour-overlay"><span class="tour-tag">Night Tour</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> Evening</span><span><i class="fa-solid fa-location-dot"></i> Watamu Beach</span></div>
+            <h3>Turtle Nesting Night Walk</h3>
+            <p>A magical, once-in-a-lifetime evening watching endangered green and hawksbill turtles nest on Watamu's moonlit beaches.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ Red-light torches provided</li>
+              <li>✓ Conservation briefing included</li>
+              <li>✓ Small groups (max 6 guests)</li>
+              <li>✓ Best: July – February</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$45</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="coastal">
+          <div class="tour-img tour-img-2"><div class="tour-emoji">⛵</div><div class="tour-overlay"><span class="tour-tag">Sunset</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> 3 Hours</span><span><i class="fa-solid fa-location-dot"></i> Mida Creek</span></div>
+            <h3>Mida Creek Sunset Kayak</h3>
+            <p>Paddle silently through Mida Creek's mangrove tunnels as flamingos and herons wade at golden hour. Utterly peaceful.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ Kayaks & paddles provided</li>
+              <li>✓ Life vests & dry bags</li>
+              <li>✓ Sundowner drinks included</li>
+              <li>✓ Bird checklist handout</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$60</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card tour-card-filterable reveal" data-category="safari">
+          <div class="tour-img tour-img-3"><div class="tour-emoji">🦛</div><div class="tour-overlay"><span class="tour-tag">2-Day</span></div></div>
+          <div class="tour-body">
+            <div class="tour-meta"><span><i class="fa-regular fa-clock"></i> 2 Days</span><span><i class="fa-solid fa-location-dot"></i> Tsavo West</span></div>
+            <h3>Tsavo West Mzima Springs</h3>
+            <p>Explore volcanic landscapes, hippo pools at Mzima Springs and the dramatic Shetani lava flows in Kenya's largest national park.</p>
+            <ul style="font-size:0.82rem;color:var(--light-txt);margin-bottom:1.25rem;padding-left:1rem;line-height:2">
+              <li>✓ 1 night lodge accommodation</li>
+              <li>✓ Underwater hippo viewing</li>
+              <li>✓ All meals & park fees</li>
+              <li>✓ Chyulu Hills scenic drive</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price"><span class="from">From</span><span class="amount">$210</span><span class="per">/ person</span></div>
+              <a href="contact.html" class="btn-card">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section-pad bg-earth">
+    <div class="container" style="text-align:center;max-width:640px">
+      <p class="section-eyebrow">Can't Find What You're Looking For?</p>
+      <h2 class="section-title">Let's Build Your <em>Perfect Tour</em></h2>
+      <p style="color:var(--light-txt);margin-bottom:2rem">Every itinerary is fully customisable. Tell Pauline your dream Kenya experience and she'll design it from scratch — any duration, any budget.</p>
+      <a href="contact.html" class="btn-primary">Request Custom Tour</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-paw"></i></span><div class="logo-text"><span class="logo-main">Watamu Wilderness</span><span class="logo-sub">Safaris & Tours</span></div></a>
+          <p>Led by Pauline Nangira, we bring you the raw beauty of Kenya — from the coral coast to the golden savannah.</p>
+          <div class="social-links"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="https://wa.me/254725845931" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="tours.html">All Tours</a></li><li><a href="about.html">About Pauline</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul class="contact-list"><li><i class="fa-solid fa-location-dot"></i><span>Watamu, Kilifi County, Kenya</span></li><li><i class="fa-solid fa-phone"></i><a href="tel:+254725845931">+254 725 845 931</a></li><li><i class="fa-solid fa-envelope"></i><a href="mailto:pauline@watamusafaris.co.ke">pauline@watamusafaris.co.ke</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Watamu Wilderness Safaris · Pauline Nangira</p><p>Kenya Tourism Board Licensed</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254725845931" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <script src="main.js"></script>
+</body>
+</html>

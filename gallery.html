@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Watamu Wilderness Safaris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <style>
+    .gallery-grid-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .gallery-item {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item.tall { aspect-ratio: 3/4; }
+    .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .g-inner {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.4s ease;
+    }
+    .g-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item:hover .g-inner { transform: scale(1.06); }
+    .g-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(15,8,2,0.85) 0%, transparent 100%);
+      padding: 1rem 1.25rem;
+      color: #fff;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover .g-caption { transform: translateY(0); }
+    .g-caption strong { display: block; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .g-caption span { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+    @media (max-width: 600px) { .gallery-item.wide { grid-column: span 1; aspect-ratio: 4/3; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-paw"></i></span><div class="logo-text"><span class="logo-main">Watamu Wilderness</span><span class="logo-sub">Safaris & Tours</span></div></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="tours.html" class="nav-link">Tours</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="btn-book">Book Now</a></li>
+      </ul>
+      <button type="button" class="hamburger" id="hamburger" title="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <p class="section-eyebrow">Through Our Lens</p>
+    <h1>Kenya in <em>All Its Glory</em></h1>
+    <p>A glimpse into the wild, coastal and cultural wonders waiting for you — captured on Watamu Wilderness tours.</p>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+
+      
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem">
+        <button class="btn-card active" style="background:var(--earth);color:#fff;border-color:var(--earth)">All</button>
+        <button class="btn-card">Wildlife</button>
+        <button class="btn-card">Coastal</button>
+        <button class="btn-card">Culture</button>
+        <button class="btn-card">Landscapes</button>
+      </div>
+
+      <div class="gallery-grid-full">
+        <div class="gallery-item wide reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80" alt="Lion pride at sunset in Tsavo East" /></div><div class="g-caption"><strong>Lion pride at sunset, Tsavo East</strong><span>Wildlife · Tsavo National Park</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" alt="Coral reef and tropical fish at Watamu Marine Park" loading="lazy" /></div><div class="g-caption"><strong>Coral reef, Watamu Marine Park</strong><span>Coastal · Watamu</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=900&q=80" alt="Giraffe standing on the savannah at Maasai Mara" loading="lazy" /></div><div class="g-caption"><strong>Giraffe at Maasai Mara</strong><span>Wildlife · Maasai Mara</span></div></div>
+        <div class="gallery-item tall reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80" alt="Dense green forest canopy in Arabuko-Sokoke" loading="lazy" /></div><div class="g-caption"><strong>Arabuko-Sokoke canopy walk</strong><span>Forest · Kilifi County</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Clear tropical shoreline at Watamu Beach" loading="lazy" /></div><div class="g-caption"><strong>Green turtle nesting, Watamu</strong><span>Wildlife · Watamu Beach</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80" alt="Kenyan cultural dance in a coastal village" loading="lazy" /></div><div class="g-caption"><strong>Giriama village dance</strong><span>Culture · Watamu Village</span></div></div>
+        <div class="gallery-item wide reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80" alt="Sunrise over the open Tsavo plains" loading="lazy" /></div><div class="g-caption"><strong>Sunrise over Tsavo plains</strong><span>Landscape · Tsavo East</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?auto=format&fit=crop&w=900&q=80" alt="Black rhino in Tsavo West wilderness" loading="lazy" /></div><div class="g-caption"><strong>Black rhino, Tsavo West</strong><span>Wildlife · Tsavo West</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80" alt="Traditional dhow sailing along the Kenyan coast" loading="lazy" /></div><div class="g-caption"><strong>Traditional dhow at Mida Creek</strong><span>Coastal · Mida Creek</span></div></div>
+        <div class="gallery-item tall reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=900&q=80" alt="Red elephant walking through Tsavo East" loading="lazy" /></div><div class="g-caption"><strong>Red elephants of Tsavo</strong><span>Wildlife · Tsavo East</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=900&q=80" alt="Colorful bird perched in coastal forest" loading="lazy" /></div><div class="g-caption"><strong>Amani sunbird, Arabuko-Sokoke</strong><span>Birds · Kilifi County</span></div></div>
+        <div class="gallery-item reveal"><div class="g-inner"><img src="https://images.unsplash.com/photo-1497206365907-f5e630693df0?auto=format&fit=crop&w=900&q=80" alt="Flamingos gathered in shallow Rift Valley water" loading="lazy" /></div><div class="g-caption"><strong>Flamingos, Lake Nakuru</strong><span>Wildlife · Rift Valley</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <p class="section-eyebrow light">Create Your Own Memories</p>
+      <h2>Your Photos Could Be <em>Next</em></h2>
+      <p>Book with Pauline and return home with a gallery full of Kenya's finest moments.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Book a Tour</a>
+        <a href="tours.html" class="btn-ghost">Explore Tours</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon"><i class="fa-solid fa-paw"></i></span><div class="logo-text"><span class="logo-main">Watamu Wilderness</span><span class="logo-sub">Safaris & Tours</span></div></a><p>Authentic Kenyan adventures led by Pauline Nangira.</p><div class="social-links"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="https://wa.me/254725845931" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="tours.html">All Tours</a></li><li><a href="about.html">About Pauline</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul class="contact-list"><li><i class="fa-solid fa-location-dot"></i><span>Watamu, Kilifi County, Kenya</span></li><li><i class="fa-solid fa-phone"></i><a href="tel:+254725845931">+254 725 845 931</a></li><li><i class="fa-solid fa-envelope"></i><a href="mailto:pauline@watamusafaris.co.ke">pauline@watamusafaris.co.ke</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Watamu Wilderness Safaris · Pauline Nangira</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254725845931" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <script src="main.js"></script>
+</body>
+</html>
