@@ -75,21 +75,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = this.querySelector('.form-submit');
     const original = btn.textContent;
+    const formData = new FormData(this);
+    const payload = {
+      firstName: formData.get('first_name')?.toString().trim() || '',
+      lastName: formData.get('last_name')?.toString().trim() || '',
+      email: formData.get('email')?.toString().trim() || '',
+      phone: formData.get('phone')?.toString().trim() || '',
+      tourInterest: formData.get('tour_interest')?.toString().trim() || '',
+      groupSize: formData.get('group_size')?.toString().trim() || '',
+      travelDate: formData.get('travel_date')?.toString().trim() || '',
+      budget: formData.get('budget')?.toString().trim() || '',
+      message: formData.get('message')?.toString().trim() || '',
+      newsletter: formData.get('newsletter') === 'on'
+    };
+
+    if (!payload.firstName || !payload.lastName || !payload.email || !payload.message) {
+      showNotification('Please complete your name, email, and message.', 'error');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      showNotification('Please enter a valid email address.', 'error');
+      return;
+    }
+
     btn.textContent = 'Sending...';
     btn.disabled = true;
     btn.style.opacity = '0.7';
 
-    setTimeout(() => {
-      showNotification('✓ Message sent! Pauline will be in touch within 24 hours.', 'success');
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Unable to send message.');
+      }
+      showNotification('Message sent! Peter will be in touch within 24 hours.', 'success');
       this.reset();
+    } catch (error) {
+      console.error('Safari contact form failed:', error);
+      showNotification('Message could not be sent. Please try WhatsApp or email Peter directly.', 'error');
+    } finally {
       btn.textContent = original;
       btn.disabled = false;
       btn.style.opacity = '';
-    }, 1500);
+    }
   });
 }
 
