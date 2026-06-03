@@ -238,7 +238,7 @@ function animateNumber(el, target, suffix = '') {
     if (progress < 1) requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
-}
+ }
 
 const statNums = document.querySelectorAll('.stat-num');
 if (statNums.length) {
